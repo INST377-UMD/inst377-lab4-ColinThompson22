@@ -1,0 +1,10 @@
+body {background-color: aqua;;
+}
+.sections {background-color: blue;
+           text-align: center;
+           width: 40%;
+           display: inline-block;
+           margin: 15px;
+           padding: 10px;
+           border: 5px solid white
+        }
