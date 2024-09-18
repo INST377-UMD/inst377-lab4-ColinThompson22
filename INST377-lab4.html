@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>INST377-lab4</title>
+        <link rel="stylesheet" href="INST377-lab4-stylesheet.css">
+    </head>
+    <body id="background">
+        <h1 id="heading">INST377-Lab 4</h1>
+        <div class="sections">
+            <form onsubmit="return(alertme())">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <input type="submit" value="Alert Me!">
+            </form>
+            <script type="text/javascript">
+                function alertme() {
+                    const nameoutput= document.getElementById("name")
+                    const nameval= nameoutput.value
+                    alert("Hi " + nameval + "!")
+                }
+            </script>
+        </div>
+        <div class="sections">
+            <button onclick="changecolor()">Change Color</button>
+            <script type="text/javascript">
+                function changecolor() {
+                    if (document.getElementById("background").style.backgroundColor == "aquamarine"){
+                        const t= document.getElementById("background").style.backgroundColor= "aqua";
+
+                    } else{
+                        const t= document.getElementById("background").style.backgroundColor= "aquamarine";
+                    }
+                }
+            </script>
+        </div>
+        <div class="sections">
+            <form name="validator" onsubmit="return (formvalidation())">
+                <label for="validate">Text Tester:</label>
+                <input type="text" id="validate">
+                <input type="submit" value="Validate Text">
+            </form>
+            <script type="text/javascript">
+            function formvalidation() {
+                const validation= /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if(validation.test(document.validator.validate.value)) {
+                    alert("No special characters allowed")
+                    return false
+                }
+            } 
+            </script>
+        </div>
+        <div class="sections">
+            <button onclick="addtext(); this.onclick= null;">Add Text</button>
+            <script type="text/javascript">
+                function addtext() {
+                   const header= document.getElementById("heading")
+                   header.innerText += "-Adding Text"
+                }
+            </script>
+        </div>
+    </body>
+</html>
